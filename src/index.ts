@@ -6,7 +6,6 @@ type Task = {
   createdAt: Date
 }
 const list = document.querySelector<HTMLUListElement>("#list")
-// const form = document.getElementById("new-task-form") as HTMLFormElement | null
 const form = document.querySelector<HTMLFormElement>("#new-task-form")
 const input = document.querySelector<HTMLInputElement>("#new-task-title")
 const tasks: Task[] = []
