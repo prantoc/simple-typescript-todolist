@@ -19,20 +19,22 @@ form?.addEventListener('submit', e => {
     completed: false,
     createdAt: new Date()
   }
+  tasks.push(newTask);
+  saveTask()
   addListItem(newTask);
   input.value = ''
-  saveTask()
 })
 
 function addListItem(task: Task) {
   const item = document.createElement('li')
   const label = document.createElement('label')
   const checkbox = document.createElement('input')
-  checkbox.type = "checkbox"
   checkbox.addEventListener("change", () => {
     task.completed = checkbox.checked
-    console.log(task)
+    saveTask()
   })
+  checkbox.type = "checkbox"
+  checkbox.checked = task.completed
   item.classList.add('list-group-item');
   checkbox.classList.add('p-2', 'm-2');
   label.append(checkbox, task.title)
